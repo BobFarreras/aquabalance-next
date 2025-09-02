@@ -10,6 +10,12 @@ import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image';
 
+import adriabebent from '@/assets/images/adriabeu.webp'
+import grans from '@/assets/images/grans.jpeg'
+import noiabebent from '@/assets/images/noiabebent.jpeg'
+import marta from '@/assets/images/marta2.png'
+
+
 const BeneficisPage = () => {
   const { t } = useTranslation();
 
@@ -56,7 +62,7 @@ const BeneficisPage = () => {
               <Image 
                 alt={t('benefitsPage.health.imageAlt')} 
                 className="w-full h-auto rounded-2xl shadow-2xl object-cover" 
-                src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751619150/out-1_skmaml.webp"
+                src={adriabebent}
                 width={800} height={600}
               />
             </motion.div>
@@ -104,7 +110,7 @@ const BeneficisPage = () => {
               <Image 
                 alt={t('benefitsPage.beauty.imageAlt')} 
                 className="w-full h-auto rounded-2xl shadow-2xl object-cover" 
-                src="https://images.unsplash.com/photo-1452223355713-db7fc5eed0b9"
+                src={grans}
                 width={800} height={600}
               />
             </motion.div>
@@ -148,7 +154,7 @@ const BeneficisPage = () => {
               <Image 
                 alt={t('benefitsPage.sports.imageAlt')} 
                 className="w-full h-auto rounded-2xl shadow-2xl object-cover" 
-                src="https://images.unsplash.com/photo-1646305591631-909438a7acfe"
+                src={noiabebent}
                 width={800} height={600}
               />
             </motion.div>
@@ -212,7 +218,7 @@ const BeneficisPage = () => {
               <div className="hidden lg:block relative h-full">
             
               <Image 
-                    src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751573743/imatgeIncialMarta_dtpoju.png" 
+                    src={marta}
                     alt={t('benefitsPage.cta.imageAlt')}
                     width={400} height={400}
                     className=" object-cover"

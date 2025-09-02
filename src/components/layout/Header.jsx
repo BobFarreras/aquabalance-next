@@ -9,7 +9,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 
-const logoUrl = "https://res.cloudinary.com/dvqhfapep/image/upload/v1751570382/log1_aqua-removebg-preview_khef9r.png";
+import logoUrl from '@/assets/images/logourl.png';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();

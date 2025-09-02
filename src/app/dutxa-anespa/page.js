@@ -10,6 +10,11 @@ import { Button } from '@/components/ui/button';
 import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image';
 
+import dutxa from '@/assets/images/dutxa.webp'
+import anespaSenseFons from '@/assets/images/anespa-dx.png'
+import noiaNegraBanyera from '@/assets/images/anespa-dx-1.jpeg'
+import testimoniMaria from '@/assets/images/carla.jpeg'
+
 const DutxaAnespaPage = () => {
   const { t } = useTranslation();
 
@@ -42,7 +47,7 @@ const DutxaAnespaPage = () => {
               <Image 
                 alt={t('anespaPage.hero.imageAlt')} 
                 className="w-full h-auto rounded-2xl shadow-2xl" 
-                src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751623826/gafdgadffga_ujgyxh.webp"
+                src={dutxa}
                 width={800} height={600}
               />
             </motion.div>
@@ -85,7 +90,7 @@ const DutxaAnespaPage = () => {
               <Image 
                 alt={t('anespaPage.howItWorks.imageAlt')} 
                 className="w-full h-auto rounded-xl shadow-lg" 
-                src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751607057/Anespa-DX_v5xc5x.png"
+                src={anespaSenseFons}
                 width={800} height={600}
               />
             </motion.div>
@@ -125,7 +130,7 @@ const DutxaAnespaPage = () => {
               <Image 
                 alt={t('anespaPage.features.imageAlt')} 
                 className="w-full h-auto rounded-xl shadow-lg" 
-                src="https://images.unsplash.com/photo-1643543162426-c3d8d948fe43"
+                src={noiaNegraBanyera}
                 width={800} height={600}
               />
             </motion.div>
@@ -144,7 +149,7 @@ const DutxaAnespaPage = () => {
                 <Image 
                   alt={t('anespaPage.testimonial.imageAlt')} 
                   className="w-12 h-12 rounded-full" 
-                  src="https://images.unsplash.com/photo-1618871588239-18017db1dc15"
+                  src={testimoniMaria}
                   width={48} height={48}
                 />
                 <div className="text-left">

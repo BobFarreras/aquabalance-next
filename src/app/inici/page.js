@@ -15,8 +15,19 @@
   import { Button } from '@/components/ui/button';
   import Image from 'next/image';
   
+  import heroMarta from '@/assets/images/Marta.jpg'
+  import Levelukk8 from '@/assets/images/leveluk-k8.png'
+  import noiadutxa from '@/assets/images/noiadutxa.jpeg'
+  import anespaCel from '@/assets/images/anespaCel.jpg'
+  import emGuarde from '@/assets/images/emGuarde.jpg'
+  import backgroundaigua from '@/assets/images/backgroundaigua.jpg'
+
+  import marc from '@/assets/images/marc.jpeg'
+  import laura from '@/assets/images/laura.jpg'
+  import carla from '@/assets/images/carla.jpeg'
+  
   const AnimatedHeroImage = ({ altText }) => {
-    const imageUrl = "https://res.cloudinary.com/dvqhfapep/image/upload/v1752081775/PHOTO-2025-07-09-12-17-56_uvqxeg.jpg";
+    const imageUrl = heroMarta
     const x = useMotionValue(0);
     const y = useMotionValue(0);
     const rotateX = useTransform(y, [-100, 150], [5, -5]);
@@ -85,7 +96,20 @@
       if (emblaApi) emblaApi.scrollNext();
     }, [emblaApi]);
   
-    const testimonials = t('testimonial.list', { returnObjects: true });
+    const rawTestimonials = t('testimonial.list', { returnObjects: true });
+
+const testimonials = rawTestimonials.map((item) => {
+  switch (item.avatar) {
+    case "marc.jpeg":
+      return { ...item, avatar: marc };
+    case "laura.jpg":
+      return { ...item, avatar: laura };
+    case "carla.jpeg":
+      return { ...item, avatar: carla };
+    default:
+      return item;
+  }
+});
   
     return (
       <PageWrapper>
@@ -93,11 +117,11 @@
           className="relative overflow-hidden bg-sky-50 py-20 md:py-32 "
           style={{
             backgroundImage: `
-              linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(255,255,255,0.85)),
-              url('https://res.cloudinary.com/dvqhfapep/image/upload/v1751573288/fondo-de-textura-de-agua-dulce-liquido-transparente_v6nmmw.jpg')
-            `,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(255,255,255,0.85)),
+            url(${backgroundaigua.src})
+          `,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           }}
         >
           <div className="container mx-auto px-4">
@@ -142,7 +166,7 @@
                 </Button>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-                <Image alt={t('productsPreview.kangenImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751604205/a1acd540-dd1b-4cdc-9a56-039492a217f4_wc4ncy.png" width={800} height={600} />
+                <Image alt={t('productsPreview.kangenImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src={Levelukk8} width={800} height={600} />
               </motion.div>
             </div>
   
@@ -156,8 +180,8 @@
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
                 <div className="relative p-8">
-                  <Image alt={t('productsPreview.anespaImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src="https://images.unsplash.com/photo-1638761502300-a0fd8fe9fc32" width={800} height={600} />
-                  <Image alt={t('productsPreview.anespaDetailAlt')} className="absolute w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl shadow-2xl border-4 border-white -bottom-4 -right-4" src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751600602/fadsfasdfa_wtswmr.jpg" width={224} height={224} />
+                  <Image alt={t('productsPreview.anespaImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src={noiadutxa} width={800} height={600} />
+                  <Image alt={t('productsPreview.anespaDetailAlt')} className="absolute w-48 h-48 md:w-56 md:h-56 object-cover rounded-2xl shadow-2xl border-4 border-white -bottom-4 -right-4" src={anespaCel} width={224} height={224} />
                 </div>
               </motion.div>
             </div>
@@ -171,7 +195,7 @@
                 </Button>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }}>
-                <Image alt={t('productsPreview.emGuardeImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751616290/fasdfads_xtgpsm.jpg" width={800} height={600} />
+                <Image alt={t('productsPreview.emGuardeImageAlt')} className="w-full h-auto object-cover rounded-2xl shadow-xl" src={emGuarde} width={800} height={600} />
               </motion.div>
             </div>
           </div>

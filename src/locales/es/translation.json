@@ -1,3 +1,5 @@
+
+
 {
     "nav": {
       "home": "Inicio",
@@ -42,17 +44,17 @@
           {
             "quote": "El agua de la ducha ANESPA es increíble. Mi piel está mucho más suave y mi pelo ya no está tan seco. Es como tener un spa en casa cada día.",
             "author": "Marc R., Barcelona",
-            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d"
+            "avatar": "marc.jpeg"
           },
           {
             "quote": "Desde que usamos el agua de Aquabalance en casa, hemos notado un cambio muy positivo. Yo sufría psoriasis y ahora ha mejorado muchísimo, lo que me hace sentir segura y feliz.",
             "author": "Laura A.P y familia, Girona",
-            "avatar": "https://res.cloudinary.com/dvqhfapep/image/upload/v1749389543/samples/upscale-face-1.jpg"
+            "avatar": "laura.jpg"
           },
           {
             "quote": "Al principio era escéptico, pero la demostración me convenció. El agua no solo sabe mejor, sino que me siento más hidratado durante todo el día. Muy recomendable.",
             "author": "Carla G., Tarragona",
-            "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+            "avatar": "carla.jpeg"
           }
         ]
     },

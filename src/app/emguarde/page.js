@@ -11,6 +11,9 @@
   import { Button } from '@/components/ui/button';
   import PageWrapper from '@/components/PageWrapper';
   import Image from 'next/image';
+
+  import emGuarde from '@/assets/images/emGuarde.jpg'
+
   
   const EmGuardePage = () => {
     const { t } = useTranslation();
@@ -51,7 +54,7 @@
                 <Image 
                   alt={t('emGuardePage.hero.imageAlt')} 
                   className="w-full h-auto rounded-2xl shadow-2xl" 
-                  src="https://res.cloudinary.com/dvqhfapep/image/upload/v1751616290/fasdfads_xtgpsm.jpg"
+                  src={emGuarde}
                   width={800} height={600}
                 />
               </motion.div>
@@ -147,7 +150,7 @@
             >
               <div className="aspect-w-16 aspect-h-9 rounded-2xl shadow-2xl overflow-hidden border-4 border-white bg-black">
                 <video
-                  src="https://res.cloudinary.com/dvqhfapep/video/upload/v1751617223/EmGuarde_by_Enagic_Espa%C3%B1ol_a6slif.mp4"
+                  src="/videos/videoEmGuarde.mp4"
                   controls
                   playsInline
                   className="w-full h-full object-cover"

@@ -11,6 +11,9 @@ import { Droplets, Zap, Wind } from 'lucide-react';
 import PageWrapper from '@/components/PageWrapper';
 import Image from 'next/image'; // Importem el component Image de Next.js
 
+import Levelukk8 from '@/assets/images/leveluk-k8-1.png'
+import FormulaLeveluk from '@/assets/images/formula.png'
+
 // Aquest component ja no rep 't' com a prop, el crida directament
 const AiguaKangenPage = () => {
   const { t } = useTranslation();

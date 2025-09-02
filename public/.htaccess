@@ -1,0 +1,36 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # --- REGLA 1: Forçar HTTPS ---
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # --- REGLA 2: Forçar www (o eliminar si prefereixes sense www) ---
+  RewriteCond %{HTTP_HOST} ^aquabalance\.es [NC]
+  RewriteRule ^(.*)$ https://www.aquabalance.es/$1 [L,R=301]
+
+  # --- REGLA 3: SPA fallback per Next.js exportat/React ---
+  # Això redirigeix qualsevol URL que no sigui arxiu ni carpeta a index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+
+  # --- OPCIONAL: Seguretat bàsica ---
+  # Evita que es llegeixin fitxers .env, .git, etc.
+  <FilesMatch "^\.">
+    Require all denied
+  </FilesMatch>
+
+  # --- OPCIONAL: Compresió i caching bàsics ---
+  <IfModule mod_headers.c>
+    # Cache per a imatges i fonts
+    <FilesMatch "\.(ico|jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot)$">
+      Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    # Cache per CSS i JS
+    <FilesMatch "\.(css|js)$">
+      Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+  </IfModule>
+</IfModule>

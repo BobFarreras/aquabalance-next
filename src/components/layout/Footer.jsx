@@ -5,6 +5,8 @@ import React from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { Droplet, Linkedin, Facebook, Instagram } from 'lucide-react';
+import logoUrl from '@/assets/images/logourl.png';
+import Image from 'next/image'; // ✅ Canvi: Importem Image de Next.js
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -16,10 +18,17 @@ const Footer = () => {
           
           <div className="md:col-span-2 lg:col-span-1">
             <Link href="/inici" className="flex items-center space-x-2 mb-4">
-              <div className="p-1.5 bg-gradient-to-br from-sky-400 to-emerald-500 rounded-lg">
-                <Droplet className="h-6 w-6 text-white" />
+              <div className="p-1.5 bg-gradient-to-br  to-emerald-500 rounded-lg">
+                  <Image 
+                     src={logoUrl} 
+                     alt="Logo de Aquabalance" 
+                     width={170} // Proporcionem una amplada
+                     height={48}  // i una alçada
+                     className="h-12 w-auto" // Aquesta classe ajustarà la mida visualment
+                     priority // Prioritzem la càrrega del logo
+                   />
               </div>
-              <span className="text-xl font-bold text-gray-800 tracking-tight">AQUABALANCE</span>
+              <span className="text-xl font-bold text-[#007AC0] tracking-tight">AQUABALANCE</span>
             </Link>
             <p className="text-slate-600">{t('footer.slogan')}</p>
           </div>

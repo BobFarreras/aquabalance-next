@@ -56,12 +56,14 @@ export const metadata = {
     apple: '/apple-icon.png',
   },
   manifest: '/manifest.webmanifest',
-  themeColor: '#0ea5e9', // Color principal (blau cel) per a la barra del navegador en mòbils
+
 
   // Altres (menys importants per a Google, però bones pràctiques)
   keywords: ['Aigua Kangen', 'Anespa', 'Enagic', 'ionitzador d\'aigua', 'salut', 'benestar', 'aigua alcalina'],
 };
-
+export const viewport = {
+  themeColor: '#0ea5e9', // Color principal (blau cel) per a la barra del navegador en mòbils
+};
 
 export default function RootLayout({ children }) {
   // ... (la resta del teu component RootLayout no canvia)
